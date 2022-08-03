@@ -1,0 +1,49 @@
+#app {
+  background: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  transition: all 0.2s;
+}
+
+#image-stack {
+  position: relative;
+}
+
+#image-stack img {
+  position: absolute;
+  animation-fill-mode: forwards;
+}
+
+#image-stack img.coming-in {
+  animation: animate-in 3s linear;
+  opacity: 1;
+}
+
+#image-stack img.going-out {
+  animation: animate-out 3s linear;
+  opacity: 0;
+}
+
+#image-stack img.hidden {
+  visibility: hidden;
+}
+
+@keyframes animate-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes animate-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}

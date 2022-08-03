@@ -14,14 +14,14 @@
     left: 0;
     height: 100%;
     width: 260px;
-    background: #111111;
+    background: #ffffff;
     /* background: #11101d; */
     z-index: 100;
     transition: all 0.5s ease;
 }
 
 .sidebar.close {
-    width: 65px;
+    width: 50px;
 }
 
 .sidebar .logo-details {
@@ -33,9 +33,9 @@
 
 .sidebar .logo-details i {
     font-size: 30px;
-    color: #fff;
+    color: #999999;
     height: 50px;
-    min-width: 65px;
+    min-width: 50px;
     text-align: center;
     line-height: 50px;
 }
@@ -90,10 +90,10 @@
 
 .sidebar .nav-links li i {
     height: 50px;
-    min-width: 65px;
+    min-width: 50px;
     text-align: center;
     line-height: 50px;
-    color: #fff;
+    color: #999999;
     font-size: 20px;
     cursor: pointer;
     transition: all 0.3s ease;

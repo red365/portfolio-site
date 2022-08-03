@@ -4,21 +4,39 @@ const Sidebar = props => {
   return (
     <>
       <div className="sidebar close">
-        <div className="logo-details">
+        {/* <div className="logo-details">
           <i className='bx bxl-c-plus-plus'></i>
-          <span className="logo_name">CodingLab</span>
-        </div>
+          <span className="logo_name"></span>
+        </div> */}
         <ul className="nav-links">
           <li>
             <a href="#">
-              <i className='bx bx-grid-alt' ></i>
-              <span className="link_name">Dashboard</span>
+              <i className='bx bx-book'></i>
+              <span className="link_name">Portfolio</span>
             </a>
             <ul className="sub-menu blank">
-              <li><a className="link_name" href="#">Category</a></li>
+              <li><a className="link_name" href="#">Portfolio</a></li>
             </ul>
           </li>
           <li>
+            <a href="#">
+              <i className='bx bxs-file-doc'></i>
+              <span className="link_name">CV</span>
+            </a>
+            <ul className="sub-menu blank">
+              <li><a className="link_name" href="#">CV</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+              <i className='bx bxl-linkedin-square' ></i>
+              <span className="link_name">LinkedIn</span>
+            </a>
+            <ul className="sub-menu blank">
+              <li><a className="link_name" href="#">LinkedIn</a></li>
+            </ul>
+          </li>
+          {/* <li>
             <div className="iocn-link">
               <a href="#">
                 <i className='bx bx-collection' ></i>
@@ -32,8 +50,8 @@ const Sidebar = props => {
               <li><a href="#">JavaScript</a></li>
               <li><a href="#">PHP & MySQL</a></li>
             </ul>
-          </li>
-          <li>
+          </li> */}
+          {/* <li>
             <div className="iocn-link">
               <a href="#">
                 <i className='bx bx-book-alt' ></i>
@@ -47,7 +65,7 @@ const Sidebar = props => {
               <li><a href="#">Login Form</a></li>
               <li><a href="#">Card Design</a></li>
             </ul>
-          </li>
+          </li> */}
           {/* <li>
                 <a href="#">
                 <i className='bx bx-pie-chart-alt-2' ></i>
@@ -101,11 +119,11 @@ const Sidebar = props => {
             </li> */}
           <li>
             <a href="#">
-              <i className='bx bx-cog' ></i>
-              <span className="link_name">Setting</span>
+              <i className='bx bxl-github'></i>
+              <span className="link_name">Github</span>
             </a>
             <ul className="sub-menu blank">
-              <li><a className="link_name" href="#">Setting</a></li>
+              <li><a className="link_name" href="http://github.com/red365">Github</a></li>
             </ul>
           </li>
           <li>
@@ -114,8 +132,8 @@ const Sidebar = props => {
                 {/* <img src="image/profile.jpg" alt="profileImg"> */}
               </div>
               <div className="name-job">
-                <div className="profile_name">Prem Shahi</div>
-                <div className="job">Web Desginer</div>
+                <div className="profile_name"></div>
+                <div className="job"></div>
               </div>
               <i className='bx bx-log-out' ></i>
             </div>

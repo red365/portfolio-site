@@ -1,31 +1,57 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Product from 'components/Product.jsx';
 import Sidebar from 'components/Sidebar.jsx';
 import products from '../content/products.js';
+import '../css/carousel.css';
 
+const MaybeHiddenImage = ({ src, ...props }) => {
+  const className = "hero-image " + props.className;
+  return <img src={src} key={props.key} className={className} />
+};
+
+const nextColor = (() => {
+  const colors = ['invoicer.PNG', 'fridge-note-screenshot.PNG'];
+  let index = 0;
+  return () => colors[index++ % colors.length]
+})();
 
 const Portfolio = props => {
+  const [images, setImages] = useState([]);
   const [activeProductIndex, setActiveProductIndex] = useState(0);
   const { name, icons, github, strapline, description, image } = products[activeProductIndex];
 
-  setTimeout(() => activeProductIndex === 0 ? setActiveProductIndex(1) : setActiveProductIndex(0), 10000)
+
+  const addImage = () => setImages([`/static/assets/products/${nextColor()}`, ...images]);
+
+  setTimeout(() => addImage(), 5000)
+
+  const mounted = useRef();
+  useEffect(() => {
+    if (!mounted.current) {
+      // do componentDidMount logic
+      mounted.current = true;
+    } else {
+      // do componentDidUpdate logic
+      console.log(images);
+    }
+  });
 
   return (
     <div className="portfolio view">
       <Sidebar />
-      {/* <h1>&lt;PortfolioApps /&gt;</h1> */}
-      {/* {products.map((product, i) => {
-        return (
-          i == 0 ? <div className="product-container">
-            <Product {...product} />
-          </div> : null
-        )
-      })} */}
       <div className="carousel-frame">
-        <div className="hero-image-container">
-          <img src={`/static/assets/products/${products[activeProductIndex].image}`} className="hero-image" />
+        <div id="image-stack">
+          {images.map((img, index) => {
+            return <MaybeHiddenImage key={images.length - index} className={index == 0 ? 'coming-in' : (index == 1 ? 'going-out' : 'hidden')} src={img} />
+          })}
         </div>
-        <div className="product-detail" >
+
+
+        {/* <div className="hero-image-container">
+          <img src={`/static/assets/products/${products[activeProductIndex].image}`} className="hero-image" />
+        </div> */}
+
+        {/* <div className="product-detail" >
           <div className="product-detail-row">
             <label>App Name: {name}</label>
             <div className="built-with">
@@ -39,10 +65,9 @@ const Portfolio = props => {
             {strapline}
           </div>
           <div className="product-detail-row">
-            {/* <button className="github-btn"><a href={github}>Github</a></button> */}
             <a className="github">Github</a>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   )
