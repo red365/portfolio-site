@@ -2,7 +2,7 @@ import React from 'react';
 
 const Sidebar = props => {
   return (
-    <>
+    <div className="sidebar-wrapper">
       <div className="sidebar close">
         {/* <div className="logo-details">
           <i className='bx bxl-c-plus-plus'></i>
@@ -161,7 +161,7 @@ const Sidebar = props => {
     sidebar.classNameList.toggle("close");
   });
   </script> */}
-    </>
+    </div>
   )
 }
 

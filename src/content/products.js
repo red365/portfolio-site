@@ -32,8 +32,8 @@ const products = [
   {
     name: "Hi! I'm a React developer with professional experience",
     icons: [ ],
-    github: "https://github.com/red365/invoicer",
-    strapline: "Stay tuned for some personal projects I have worked on...",
+    github: "https://github.com/red365/",
+    strapline: "Stay tuned to view some personal projects I have worked on as well as the tech stack used...",
     description: "",
     image: ""
   },
