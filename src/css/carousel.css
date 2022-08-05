@@ -15,12 +15,12 @@
 }
 
 #image-stack img.coming-in {
-  animation: animate-in 3s linear;
+  animation: animate-in 2s linear;
   opacity: 1;
 }
 
 #image-stack img.going-out {
-  animation: animate-out 3s linear;
+  animation: animate-out 2s linear;
   opacity: 0;
 }
 

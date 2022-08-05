@@ -30,8 +30,17 @@ const icons = {
 
 const products = [
   {
+    name: "Hi! I'm a React developer with professional experience",
+    icons: [ ],
+    github: "https://github.com/red365/invoicer",
+    strapline: "Stay tuned for some personal projects I have worked on...",
+    description: "",
+    image: ""
+  },
+  {
     name: "Invoicer",
-    icons: [icons.react, icons.mysql, icons.nodejs],
+    icons: [{icon:"bxl-react", iconName: "React"}, {icon: "bxs-data", iconName: "MySQL"}, {icon:"bxl-nodejs", iconName: "NodeJS"} ],
+    // icons: [icons.react, icons.mysql, icons.nodejs],
     github: "https://github.com/red365/invoicer",
     strapline: "Store invoice data and create printable invoices",
     description: "",
@@ -39,7 +48,8 @@ const products = [
   },
   {
     name: "Fridge Note",
-    icons: [icons.svelte, icons.mongodb, icons.nodejs],
+    icons: [{icon: "svelte", iconName: "Svelte"}, {icon: "bxl-mongodb", iconName: "MongoDB"}, {icon:"bxl-nodejs", iconName: "NodeJS"} ],
+    // icons: [icons.svelte, icons.mongodb, icons.nodejs],
     github: "https://github.com/red365/fridge-note-2-revenge-of-the-fridge",
     strapline: "Place reminder notes on a virtual fridge",
     description: "",
@@ -47,11 +57,12 @@ const products = [
   },
     {
     name: "Home VJ",
-    icons: [icons.react, icons.mysql, icons.nodejs ],
+    icons: [{icon:"bxl-react", iconName: "React"}, {icon: "bxs-data", iconName: "MySQL"}, {icon:"bxl-nodejs", iconName: "NodeJS"} ],
+    // icons: [icons.react, icons.mysql, icons.nodejs ],
     github: "https://github.com/red365/home-vj",
-    strapline: "Create visuals that can be triggered on the fly during a DJ set",
+    strapline: "Aggregate slideshows and videos and trigger them on the fly from a mobile device",
     description: "",
-    image: ""
+    image: "home-vj-final.png"
   },
 ]
 
