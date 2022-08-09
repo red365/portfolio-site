@@ -39,10 +39,24 @@ const Portfolio = props => {
   const product = products[productConfig.productIndex];
 
   return (
-    <div className="portfolio view">
-      <Sidebar />
-      <div className="product-container">
-        <CarouselImages images={productConfig.images} />
+    <div className="portfolio-page">
+      <div className="portfolio view">
+        <Sidebar />
+        <div className="product-container">
+          <div className="main-panel">
+            <div className="detail-panel">
+              <h1>Hey! I'm a React developer...</h1>
+              <h2>Stay tuned for some personal projects</h2>
+            </div>
+            <div className="hero-panel">
+              {/* <CarouselImages images={productConfig.images} /> */}
+              <div className="intro-slide">
+                <img className="react-logo" src="/static/assets/logos/logo.svg" />
+                {/* <h5>Stay tuned for some personal projects I've built</h5> */}
+              </div>
+            </div>
+          </div>
+          {/*         
         <div className="product-detail" >
           <div className={` ${productIndex == 0 ? 'expand-panel ' : ''}details-panel`}>
             <h1>{product.name}</h1>
@@ -56,8 +70,8 @@ const Portfolio = props => {
           </div>
 
 
-        </div>
-        {/* <div className="sub-heading-row detail row">
+        </div> */}
+          {/* <div className="sub-heading-row detail row">
           <div className="heading">
             <h2>{products[productConfig.productIndex].strapline}</h2>
           </div>
@@ -67,6 +81,23 @@ const Portfolio = props => {
             <a href={products[productConfig.productIndex].github} className="github">View me on <i className='bx bxl-github'></i></a>
           </div>
         </div> */}
+        </div>
+      </div>
+      <div className="lower-panel">
+        <div className="about">
+          <h2>About Me</h2>
+          <p>I'm a React and front-end web developer with professional experience gained working for Zumatech Ltd between 2020
+            and 2022 and am currently looking for work. I am passionate about using technology to eliminate repetition, analyse data and build clean and minimal user interfaces.
+          </p>
+
+          <p>
+            The tech stack I am most familiar with is React, NodeJS, Express and MySQL however in the course of my employment I have contributed to projects in Python, Django and JQuery amongst other languages and frameworks.
+            I have also looked to broaden my knowledge of NodeJS when working on my portfolio and other personal projects, creating my own production/development build process configuration using Webpack as well using
+          </p>
+
+
+
+        </div>
       </div>
     </div>
   )
