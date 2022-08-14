@@ -20,7 +20,8 @@ const Sidebar = props => {
           </li>
           <li>
             <a href="#">
-              <i className='bx bxs-file-doc'></i>
+              {/* <i className='bx bxs-file-doc'></i> */}
+              <i class='bx bx-user'></i>
               <span className="link_name">CV</span>
             </a>
             <ul className="sub-menu blank">

@@ -144,12 +144,38 @@ h5 {
   justify-content: center;
 }
 
-.about {
+.profile {
   font-family: "Poppins", Sans-serif,
     Helvetica,
     Sans-serif;
   color: #ffffff;
   width: 900px;
+  display: flex;
+  flex-direction: row;
+  padding-left: 30px;
+}
+
+.profile-sidebar {
+  flex-grow: 1;
+  background-color: #00031c;
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 30px 20px;
+}
+
+.profile-sidebar>img {
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  border: 3px solid #333333;
+}
+
+.profile-detail {
+  flex-grow: 4;
+  padding: 0 30px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -169,14 +195,14 @@ h5 {
 }
 
 
-.about p {
+.profile p {
   padding-bottom: 20px;
 }
 
-.about h2 {
-  text-align: center;
-  margin-bottom: 20px;
+.profile h2 {
+  margin-bottom: 10px;
   font-size: 2rem;
+  border-bottom: 1px solid #ffffff;
 }
 
 .product-container {

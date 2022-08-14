@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Sidebar from 'components/Sidebar.jsx';
 import products from '../content/products.js';
 import CarouselImages from 'components/CarouselImages.jsx';
+import Profile from 'components/Profile.jsx';
 import Icon from 'components/Icon.jsx';
 import '../css/carousel.css';
 
@@ -84,20 +85,7 @@ const Portfolio = props => {
         </div>
       </div>
       <div className="lower-panel">
-        <div className="about">
-          <h2>About Me</h2>
-          <p>I'm a React and front-end web developer with professional experience gained working for Zumatech Ltd between 2020
-            and 2022 and am currently looking for work. I am passionate about using technology to eliminate repetition, analyse data and build clean and minimal user interfaces.
-          </p>
-
-          <p>
-            The tech stack I am most familiar with is React, NodeJS, Express and MySQL however in the course of my employment I have contributed to projects in Python, Django and JQuery amongst other languages and frameworks.
-            I have also looked to broaden my knowledge of NodeJS when working on my portfolio and other personal projects, creating my own production/development build process configuration using Webpack as well using
-          </p>
-
-
-
-        </div>
+        <Profile />
       </div>
     </div>
   )
