@@ -2,6 +2,9 @@
   border: 5px solid blue;
 } */
 
+/* Google Fonts Import Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +16,7 @@ body {
   background-color: #00031c;
   font-weight: 100;
   color: #666666;
-  margin: auto;
+  /* margin: auto; */
   /* width: 100vw; */
   max-width: 1920px;
 }
@@ -25,13 +28,115 @@ body {
   flex-direction: column;
 }
 
+h1 {
+  font-family: 'Silkscreen', Sans-serif;
+  color: #eff542;
+  font-size: 3rem;
+  -webkit-font-smoothing: antialiased;
+  line-height: 6rem;
+}
+
+section.main-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+section.main-panel .navbar {
+  /* position: fixed; */
+  top: 0;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 50px;
+  background: #00031c;
+  /* background: #11101d; */
+  z-index: 100;
+  transition: all 0.5s ease;
+  margin-bottom: 30px;
+}
+
+section.main-panel .navbar i {
+  height: 50px;
+  min-width: 50px;
+  text-align: center;
+  line-height: 50px;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+section.main-panel .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  padding: 0 20px;
+}
+
 .portfolio,
 .view {
   display: flex;
-  flex-grow: 1;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
+  width: 100%;
+  /* border: 1px solid red; */
+}
+
+.item-fade {
+  vertical-align: top;
+  transition: opacity 3s;
+  opacity: 0;
+}
+
+
+.navbar-container {
+  display: flex;
+  flex-direction: column;
   height: 100vh;
+}
+
+.headline {
+  /* border: 5px solid red; */
+  display: flex;
+  flex-direction: row;
+}
+
+.headline>* {
+  word-wrap: break-word;
+}
+
+.image-stack {
+  min-width: 100%;
+  min-height: 628.23px;
+  flex-grow: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-stack-hidden {
+  display: none;
+}
+
+.image-stack>* {
+  flex-grow: 1;
+}
+@media only screen and (max-width: 600px) {
+
+  .portfolio,
+  .view {
+    flex-direction: column;
+  }
+
+  /* #panel-container>* {
+    flex-basis: 0;
+  }
+
+  #panel-container .hidden {
+    display: block;
+  } */
 }
 
 .headline-row {
@@ -71,14 +176,18 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 500px;
-  height: 239px;
 }
 
-.intro-slide>img {
+.react-logo {
   height: 200px;
   width: 200px;
+  margin: 0 auto;
 }
+
+/* .intro-slide>img {
+  height: 200px;
+  width: 200px;
+} */
 
 .tech-icons {
   display: flex;
@@ -92,17 +201,6 @@ body {
   width: 0%;
 }
 
-#image-stack {
-  min-width: 100%;
-  min-height: 628.23px;
-  flex-grow: 3;
-  display: flex;
-  flex-direction: column;
-}
-
-#image-stack>* {
-  flex-grow: 1;
-}
 
 .product-detail>* {
   display: flex;
@@ -116,13 +214,7 @@ body {
   align-items: flex-end;
 }
 
-h1 {
-  font-family: 'Silkscreen', Sans-serif;
-  color: #eff542;
-  font-size: 4rem;
-  -webkit-font-smoothing: antialiased;
-  line-height: 6rem;
-}
+
 
 h2,
 h3,
@@ -213,17 +305,16 @@ h5 {
   align-items: center;
 }
 
-.main-panel {
+/* .main-panel {
   display: flex;
   flex-direction: row;
   height: 525px;
   width: 1000px;
-  /* border: 1px solid #DDDDDD; */
 }
 
 .main-panel>* {
   width: 50%;
-}
+} */
 
 .product-image {
   flex-grow: 1;

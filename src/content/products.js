@@ -29,14 +29,14 @@ const icons = {
 
 
 const products = [
-  {
-    name: "Hi! I'm a React developer with professional experience",
-    icons: [ ],
-    github: "https://github.com/red365/",
-    strapline: "Stay tuned to view some personal projects I have worked on as well as the tech stack used...",
-    description: "",
-    image: ""
-  },
+  // {
+  //   name: "Hi! I'm a React developer with professional experience",
+  //   icons: [ ],
+  //   github: "https://github.com/red365/",
+  //   strapline: "Stay tuned to view some personal projects I have worked on as well as the tech stack used...",
+  //   description: "",
+  //   image: ""
+  // },
   {
     name: "Invoicer",
     icons: [{icon:"bxl-react", iconName: "React"}, {icon: "bxs-data", iconName: "MySQL"}, {icon:"bxl-nodejs", iconName: "NodeJS"} ],
