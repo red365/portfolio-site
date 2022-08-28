@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App.jsx';
+import PortfolioSite from './PortfolioSite.jsx';
 import './css/main.css';
+import 'animate.css';
 // import './css/sidebar.css';
 
-ReactDOM.render(<App />, document.getElementById('app-root'))
+ReactDOM.render(<PortfolioSite />, document.getElementById('app-root'))

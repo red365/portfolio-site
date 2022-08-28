@@ -5,7 +5,7 @@ const Navbar = props => {
     <div className="navbar">
       {/* <ul>
         <li> */}
-      <a href="#">
+      <a href="#portfolio">
         <i className='bx bx-book'></i>
         {/* <span className="link_name">Portfolio</span> */}
       </a>
@@ -14,7 +14,7 @@ const Navbar = props => {
         </ul>
       </li> */}
       {/* <li> */}
-      <a href="#">
+      <a href="#profile">
         {/* <i className='bx bxs-file-doc'></i> */}
         <i className='bx bx-user'></i>
         {/* <span className="link_name">CV</span> */}
