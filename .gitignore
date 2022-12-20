@@ -1,4 +1,7 @@
 assets/pics/
 node_modules/
 public/build/
+public/static/
 config/
+src/data-analysis/
+src/content/profile.js

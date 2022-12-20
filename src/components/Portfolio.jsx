@@ -6,17 +6,19 @@ import Card from './Card.jsx';
 const Portfolio = props => {
   return (
     <section className="portfolio-projects">
+      <div className="triangle-row">
+        <div className="triangle"></div>
+      </div>
       <a name="portfolio"></a>
-      <div className="section-heading portfolio-projects-header">
+      <div className="section-heading">
         <h3>Portfolio</h3>
       </div>
       <div className="portfolio-projects-detail">
-        {products.map(product => {
+        {products.map((product, i) => {
           return (
-            <Card >
-              <Product {...product} />
+            <Card key={i}>
+              <Product {...product} productIndex={i} />
             </Card>
-
           )
         })}
       </div>

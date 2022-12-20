@@ -1,5 +1,6 @@
 import React from 'react';
 import Socials from './Socials.jsx';
+import profile from '../content/profile.js';
 
 const Profile = props => {
 
@@ -9,51 +10,59 @@ const Profile = props => {
       <div className="section-heading">
         <h3>About</h3>
       </div>
-      <div className="profile-header">
-        <img className="profile-pic" src="/static/assets/pics/me-blazer-smiling-crop.jpg" />
-        <div>
+      <div className="profile-wrapper">
+        <div className="profile-header">
+          <img className="profile-pic" src="/static/assets/pics/me-blazer-smiling-crop.jpg" />
           <div>
-            <h3 className="name">{process.env.FORENAME} {process.env.SURNAME}</h3>
+            <div>
+              <h3 className="name">{process.env.FORENAME} {process.env.SURNAME}</h3>
+            </div>
+            <Socials />
           </div>
-          <Socials />
+        </div>
+        <div className="profile-detail">
+          <p>{profile.paragraphOne}
+          </p>
+
+          <p>{profile.paragraphTwo}
+          </p>
+
+          <p>
+            {profile.paragraphThree}
+          </p>
         </div>
       </div>
-      <div className="profile-detail">
-        <p>I'm a React and front-end web developer with professional development experience currently looking for work. Based in Bristol, England but I am open to re-locating elsewhere in Britain.
-          I am passionate about using technology to eliminate repetition, analyse data and build clean and minimal user interfaces.
-        </p>
+      <div className="profile-wrapper experience">
+        <div className="experience-detail">
+          <h3>{profile.year1}</h3>
+          <h6 className="role-row">Front End Developer - {profile.employer}</h6>
+          <div className="role-column">
+            <h6>Front End Developer - <a href="https://zumatech.co.uk">Zumatech Ltd</a></h6>
+          </div>
+        </div>
+        <div className="profile-detail">
+          <p>Worked on the implementation of the UI design and underlying code of user interfaces for client apps and company products using
+            Flexbox (CSS), React, jQuery and plain Javascript. The interfaces I built I would then integrate with company and third party APIs (such as Elastichosts)
+          </p>
 
-        <p>
-          The tech stack I have worked most with is React, NodeJS, Express and MySQL however in the course of my employment I have contributed to company products and client apps in Python, Django and JQuery amongst other languages and frameworks.
-          I have also looked to broaden my knowledge of NodeJS when working on my portfolio and other personal projects, creating my own production/development build process configuration using Webpack as well building a portfolio app in Svelte and Mongodb
-        </p>
+          <p>
+            Supported legacy React apps (version 16 and earlier) by providing functionality updates and bug fixes
+          </p>
 
-        <p>
-          Find out more about my professional experience below
-        </p>
+          <p>
+            In charge of building and maintaining a NodeJS, Express, React 16.x and Webpack 3 project template to bootstrap new React projects with
+          </p>
+        </div>
       </div>
-      <div className="experience">
-        <h3>2020 - 2022</h3>
-        <h6>Front End Developer - Zumatech Ltd, Brighton, England</h6>
-
-        <p>Worked on the implementation of the UI design and underlying code of user interfaces for client apps and company products using
-          Flexbox (CSS), React, jQuery and plain Javascript. The interfaces I built I would then integrate with company and third party APIs (such as Elastichosts)
-        </p>
-
-        <p>
-          Supported legacy React apps (version 16 and earlier) by providing functionality updates and bug fixes
-        </p>
-
-        <p>
-          In charge of building and maintaining a NodeJS, Express, React 16.x and Webpack 3 project template to bootstrap new React projects with
-        </p>
-
-        <h3>2022 - ?</h3>
-        <p>Looking for a new partner with which to write the next chapter of my programming career</p>
-
-        <p>Hopefully, if you've read this far, it might be with you! If you like what you have seen please feel free to contact me via the following channels: </p>
-        <Socials />
-        <p>I would love to hear from you!</p>
+      <div className="profile-wrapper experience">
+        <div className="experience-detail">
+          <h3>{profile.year2}</h3>
+        </div>
+        <div className="profile-detail">
+          <p>{profile.signOff1}</p>
+          <Socials />
+          <p className="profile-sign-off">I would love to hear from you!</p>
+        </div>
       </div>
     </section>
   )

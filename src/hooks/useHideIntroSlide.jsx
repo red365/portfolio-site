@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
-const useHideIntroSlide = () => {
+const useHideIntroSlide = (introSlideDuration) => {
     const [hideIntroSlide, setIntroSlideVisibility] = useState(false);
 
-    useEffect(() => setTimeout(() => setIntroSlideVisibility(true), 7000), []);
+    useEffect(() => setTimeout(() => setIntroSlideVisibility(true), introSlideDuration), []);
 
     return hideIntroSlide;
 }

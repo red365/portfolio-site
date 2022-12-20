@@ -4,14 +4,13 @@ import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import dotenv from 'dotenv';
-const config = require('../webpack.config.js');
+
 const formidable = require('express-formidable');
 
 const server = express();
 server.use(formidable());
 
 const args = process.argv;
-
 if (args[2] == '--mode' && args[3] == 'dev') {
   dotenv.config({ path: "config/development.env"});
 } else {
@@ -27,7 +26,7 @@ const CSS_PATH = path.join(__dirname, '..', 'public', 'build', 'main.css');
 // MODE
 
 if (args[2] == '--mode' && args[3] == 'dev') {
-	const compiler = webpack(config);
+	const compiler = webpack(require('../webpack.config.js'));
 	server.use(webpackDevMiddleware(compiler, { publicPath: '/static/build' }));
 	server.use(webpackHotMiddleware(compiler, {}));
 } else {
@@ -39,7 +38,7 @@ if (args[2] == '--mode' && args[3] == 'dev') {
 	);
 }
 
-server.use('/static/assets/', express.static(STATIC_ASSETS_PATH));
+server.use('/static/', express.static(path.join(__dirname, '..', 'public', 'static')));
 
 server.get('/*', (request, response) => {
 	response.sendFile(INDEX_FILE_PATH);

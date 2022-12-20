@@ -1,25 +1,42 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import products from '../content/products.js';
+import useModal from '../hooks/useModal.jsx';
 
-const CarouselImage = ({ src, ...props }) => {
-  const className = "hero-image " + props.className;
-  return <img src={src} key={props.key} className={className} />
-};
+const getNextIndex = currentIndex => {
+  const incrementIndex = currentIndex + 1;
+  return incrementIndex % products.length;
+}
 
-const Carousel = props => {
+const Carousel = ({ displayBrowser, carouselImageDuration, imageDuration }) => {
+  const { setModalIsOpen, setModalProduct } = useModal();
+  const [image, setImage] = useState(`/static/assets/products/${products[0].image}`);
+  const [productIndex, setProductIndex] = useState(0);
+
+  function openModal() {
+    setModalIsOpen(true);
+    setModalProduct(productIndex);
+  }
+
+  setTimeout(() => {
+    if (displayBrowser) {
+      setImage(`/static/assets/products/${products[getNextIndex(productIndex)].image}`);
+      setProductIndex(getNextIndex(productIndex));
+    }
+  }, carouselImageDuration);
+
   useEffect(() => {
-    window.setTimeout(() => {
-      document.getElementById('image-stack').style.height = `${Math.max(...([...document.querySelectorAll('#image-stack img')].map(el => el.offsetHeight)))}px`;
-      document.getElementById('browser').style.height = `${Math.max(...([...document.querySelectorAll('#image-stack img')].map(el => el.offsetHeight)))}px`
-    }, 200)
-  });
+    displayBrowser ? setTimeout(() => {
+      document.getElementById(`hero-image`).className = "hero-image animate__animated animate__fadeOut";
+    }, imageDuration - 1000) : null
+  }, [image]);
 
-  return (
-    <div id="image-stack" className={props.className}>
-      {props.images.map((img, index) => {
-        return <CarouselImage {...props} key={props.images.length - index} className={index == 0 ? 'coming-in' : (index == 1 ? 'going-out' : 'hidden')} src={img} />
-      })}
-    </div>
-  )
+  useEffect(() => {
+    document.getElementById(`hero-image`).className = "hero-image animate__animated animate__fadeIn"
+  }, [image])
+
+
+
+  return <img id="hero-image" onClick={() => openModal()} src={image} className="hero-image animate__animated animate__fadeIn" />
 }
 
 export default Carousel;

@@ -39,13 +39,21 @@ const products = [
   // },
   {
     name: "Invoicer",
-    icons: [{icon:"bxl-react", iconName: "React"}, {icon: "bxs-data", iconName: "MySQL"}, {icon:"bxl-nodejs", iconName: "NodeJS"} ],
+    icons: [{icon:"bxl-react", iconName: "React"}, {icon:"bxl-typescript", iconName: "Typescript"}, {icon: "bxs-data", iconName: "MySQL"}, {icon:"bxl-nodejs", iconName: "NodeJS"} ],
     github: "https://github.com/red365/invoicer",
     strapline: "Store invoice data and create printable invoices",
     description: "",
     problem: "I was wasting too much time each month converting timesheet data into invoices",
     solutionHeader: "An app that produces printable and itemised invoices.",
-    solutionText: ["Invoice data is entered and saved to the database along with a timesheet reference.", "Timesheets can be exported from Excel in CSV format and imported and processed by Invoicer", "The timesheet reference acts as a hook to retrieve the CSV data and import it to the invoice ready for printing.", "Written in the class component React style"],
+    solutionText: [
+      "Invoice data is entered and saved to the database along with a timesheet reference.", 
+      "Timesheets can be exported from Excel in CSV format and imported and processed by Invoicer", 
+      "The timesheet reference acts as a hook to retrieve the CSV data and import it to the invoice ready for printing.", 
+      "Written in the functional component React style",
+      "Features pagination component to help the user browse through invoices",
+      "Uses custom hook to manage status notifications returned from API calls",
+      "Uses Typescript to make the development process more efficient"
+    ],
     image: "invoicer.PNG"
   },
   {

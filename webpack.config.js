@@ -1,19 +1,17 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 const path = require('path');
 var webpack = require('webpack');
 const dotenv = require('dotenv');
 
-
 const mode = process.env.NODE_ENV || 'development';
 const prod = mode === 'production';
-console.log('MODE ', mode);
 
 const entry = ['./src/index.jsx']
 var plugins = undefined;
 
-const env = dotenv.config(prod ? {path: 'config/production.env ' } : {path: 'config/development.env'}).parsed;
-
+const env = dotenv.config(prod ? {path: 'config/production.env' } : {path: 'config/development.env'}).parsed;
 const envKeys = Object.keys(env).reduce((prev, next) => {
 	prev[`process.env.${next}`] = JSON.stringify(env[next]);
 	return prev;
@@ -21,6 +19,11 @@ const envKeys = Object.keys(env).reduce((prev, next) => {
 
 if (prod) {
 	plugins = [
+		new CopyPlugin({
+			patterns: [
+				{ from: "src/data-analysis/convertedCsv.json", to: "../static/convertedCsv.json" },
+				{ from: "assets/", to: "../static/assets/" }
+			]}),
 		new MiniCssExtractPlugin({
 			filename: '[name].css',
 		}),
@@ -31,6 +34,11 @@ if (prod) {
 } else {
 	entry.push('webpack-hot-middleware/client');
 	plugins = [
+		new CopyPlugin({
+			patterns: [
+				{ from: "src/data-analysis/convertedCsv.json", to: "../static/convertedCsv.json" },
+				{ from: "assets/", to: "../static/assets/" }
+			]}),
 		new ReactRefreshWebpackPlugin(),
 		new webpack.DefinePlugin(envKeys),
 		new webpack.HotModuleReplacementPlugin(),
