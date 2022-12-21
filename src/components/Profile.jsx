@@ -37,7 +37,7 @@ const Profile = props => {
           <h3>{profile.year1}</h3>
           <h6 className="role-row">Front End Developer - {profile.employer}</h6>
           <div className="role-column">
-            <h6>Front End Developer - <a href="https://zumatech.co.uk">Zumatech Ltd</a></h6>
+            <h6>Front End Developer - <a href={`https://${profile.employerWebAddress}`}>Zumatech Ltd</a></h6>
           </div>
         </div>
         <div className="profile-detail">
