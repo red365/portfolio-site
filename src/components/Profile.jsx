@@ -61,7 +61,7 @@ const Profile = props => {
         <div className="profile-detail">
           <p>{profile.signOff1}</p>
           <Socials />
-          <p className="profile-sign-off">I would love to hear from you!</p>
+          <p className="profile-sign-off">{profile.signOff1}</p>
         </div>
       </div>
     </section>
