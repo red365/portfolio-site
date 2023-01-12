@@ -30,7 +30,46 @@ section.main-panel h1 {
   color: #eff542;
   font-size: 3rem;
   -webkit-font-smoothing: antialiased;
-  line-height: 6rem;
+  line-height: 3.5rem;
+  margin-bottom: 15px;
+}
+
+.headline p {
+  font-family: "Noto Sans", sans-serif;
+  color: #fff;
+  font-size: 0.90rem;
+  margin-bottom: 10px;
+  line-height: 1.50rem;
+}
+
+.calls-to-action {
+  display: flex;
+  flex-direction: row;
+  justify-items: space-around;
+  flex-grow: 1;
+}
+
+.call-button {
+  border: none;
+  border-radius: 3px;
+  background-color: #eff542;
+  padding: 5px 10px;
+  margin: 3px;
+}
+
+.call-button a {
+  color: #333;
+  font-weight: bold;
+  font-size: 0.70rem;
+  text-decoration: none;
+}
+
+.call-button.analytics-button {
+  background-color: #000;
+}
+
+.call-button.analytics-button a {
+  color: #eff542;
 }
 
 .browser {
@@ -41,7 +80,26 @@ section.main-panel h1 {
   max-width: 600px;
 }
 
-@keyframes slide-up {
+.transition-intro-slide {
+  animation-name: slide-transition;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+
+@keyframes slide-transition {
+  from {
+    background-color: #00031c;
+  }
+
+  to {
+    background-color: #fff;
+  }
+}
+
+
+/* @keyframes slide-up {
   from {
     opacity: 0.2;
     top: 100px;
@@ -52,7 +110,7 @@ section.main-panel h1 {
     top: 20px;
   }
 
-}
+} */
 
 .easter-egg {
   display: flex;
@@ -65,7 +123,7 @@ section.main-panel h1 {
 }
 
 .easter-egg p {
-  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
   color: #fff;
   line-height: 1.75rem;
 }
@@ -132,14 +190,10 @@ section.main-panel h1 {
 
 .browser-btn {
   text-align: center;
-  border-radius: 5px;
+  border-radius: 50px;
   width: 10%;
   height: 15px;
-  background-color: #aaaaaa;
-}
-
-.btn-github {
-  background-color: #111;
+  background-color: #ddd;
 }
 
 .browser-btn i {
@@ -151,11 +205,11 @@ section.main-panel h1 {
   border-radius: 50px;
   width: 55%;
   height: 15px;
-  background-color: #aaaaaa;
+  background-color: #ddd;
 }
 
 .browser-body h4 {
-  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-family: "Noto Sans", Arial, Helvetica, sans-serif;
   color: #fff;
   margin-bottom: 20px;
   font-weight: 200;
@@ -199,6 +253,48 @@ section.main-panel .content {
   flex-direction: column;
   justify-content: flex-start;
   width: 100vw;
+}
+
+.outer-nav-container {
+  background: #00031c;
+  display: flex;
+  justify-content: flex-end;
+  padding-left: 7%;
+  flex-grow: 1
+}
+
+.nav-space {
+  flex-grow: 1;
+  flex-shrink: 100;
+  max-width: 25%;
+}
+
+.navbar-desktop {
+  display: flex;
+  flex-direction: row;
+  min-height: 30px;
+  flex-grow: 1;
+  background: #00031c;
+}
+
+.header-list {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.header-list>* {
+  display: inline-block;
+  padding: 10px 12px;
+  margin: 0 13px;
+  cursor: pointer;
+}
+
+.header-list>li>a {
+  color: #eff542;
+  font-size: 0.85rem;
+  font-family: "Noto Sans", sans-serif;
+  text-decoration: none;
+  letter-spacing: 0.22rem;
 }
 
 
@@ -261,7 +357,7 @@ section.main-panel .content {
 }
 
 .profile p {
-  font-family: "Noto Sans";
+  font-family: "Noto Sans", sans-serif;
   font-size: 0.75rem;
   color: #666;
 }
@@ -326,6 +422,10 @@ section.main-panel .content {
   .icon-bar {
     display: none;
   }
+
+  .navbar-desktop {
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 1000px) {
@@ -340,10 +440,12 @@ section.main-panel .content {
     justify-content: flex-start;
     margin-bottom: 0px;
     padding-left: 10px;
+    min-width: 60px;
   }
 
   section.main-panel .navbar i {
     margin-bottom: 30px;
+    display: none;
   }
 
   .headline {
@@ -374,11 +476,11 @@ section.main-panel .content {
   }
 
   .browser-main-panel {
-    min-height: 271px;
+    min-height: 272px;
   }
 
   .intro-slide {
-    min-height: 271px;
+    min-height: 272px;
   }
 
   section.main-panel .content {
@@ -387,6 +489,22 @@ section.main-panel .content {
     padding: 0 50px;
     justify-content: space-evenly;
   }
+}
+
+@media only screen and (max-width: 1000px) {
+  section.main-panel h1 {
+    line-height: 6rem;
+  }
+
+  .headline p {
+    display: none;
+
+  }
+
+  .calls-to-action {
+    display: none;
+  }
+
 }
 
 @media only screen and (max-width: 600px) {
@@ -804,80 +922,4 @@ a.github i {
   .role-column h6 {
     font-size: 1rem;
   }
-}
-
-.analysis-headline {
-  flex-grow: 1;
-}
-
-.analysis-headline h1 {
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-}
-
-.excel-viewer-container {
-  display: flex;
-  flex-direction: row;
-  flex-grow: 1;
-  padding-left: 50px;
-  padding-right: 50px;
-}
-
-section.analysis-page {
-  display: flex;
-  flex-direction: column;
-}
-
-.excel-viewer {
-  font-family: Arial, Helvetica, sans-serif;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  color: black;
-  overflow: scroll;
-}
-
-.viewer-row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-}
-
-.field-size {
-  min-width: 80px;
-  max-width: 80px;
-}
-
-.viewer-frame {
-  display: flex;
-  background-color: #ddd;
-  justify-content: center;
-  padding: 3px;
-}
-
-.index-field {
-  min-width: 40px;
-}
-
-.custom-field {
-  background-color: yellow;
-}
-
-input.field-size {
-  border: 1px solid #999;
-  padding-left: 3px;
-}
-
-.formula-bar {
-  padding: 15px;
-  background-color: #ddd;
-  flex-grow: 1;
-}
-
-.formula-bar input {
-  height: 30px;
-  font-size: 1.25rem;
-  padding-left: 5px;
-  width: 100%;
 }

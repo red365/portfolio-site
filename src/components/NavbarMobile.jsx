@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Navbar = props => {
+const NavbarMobile = props => {
   return (
     <div className="navbar">
       <a href="#portfolio">
@@ -15,9 +15,16 @@ const Navbar = props => {
       <a href="http://github.com/red365">
         <i className='bx bxl-github'></i>
       </a>
+      <a href="/data-analysis">
+        <i class='bx bxs-bar-chart-alt-2'></i>
+      </a>
+      <a href="#">
+        <i class='bx bxs-data' ></i>
+      </a>
+
     </div>
 
   )
 }
 
-export default Navbar;
+export default NavbarMobile;

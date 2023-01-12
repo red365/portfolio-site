@@ -2,6 +2,7 @@ assets/pics/
 node_modules/
 public/build/
 public/static/
+public/_redirects
 config/
 src/data-analysis/
 src/content/profile.js

@@ -30,10 +30,10 @@ if (args[2] == '--mode' && args[3] == 'dev') {
 	server.use(webpackDevMiddleware(compiler, { publicPath: '/static/build' }));
 	server.use(webpackHotMiddleware(compiler, {}));
 } else {
-	server.get('/static/build/bundle.js', (request, response) =>
+	server.get('/build/bundle.js', (request, response) =>
 		response.status(200).sendFile(path.resolve(BUNDLE_PATH)),
 	);
-	server.get('/static/build/main.css', (request, response) =>
+	server.get('/build/main.css', (request, response) =>
 		response.status(200).sendFile(path.resolve(CSS_PATH)),
 	);
 }

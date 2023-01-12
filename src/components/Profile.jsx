@@ -8,7 +8,7 @@ const Profile = props => {
     <section className="profile">
       <a name="profile"></a>
       <div className="section-heading">
-        <h3>About</h3>
+        <h3>Profile</h3>
       </div>
       <div className="profile-wrapper">
         <div className="profile-header">
@@ -61,7 +61,7 @@ const Profile = props => {
         <div className="profile-detail">
           <p>{profile.signOff1}</p>
           <Socials />
-          <p className="profile-sign-off">{profile.signOff1}</p>
+          <p className="profile-sign-off">{profile.signOff2}</p>
         </div>
       </div>
     </section>

@@ -1,15 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import Carousel from './Carousel.jsx';
 import useIntroSlideContentTransition from '../hooks/useIntroSlideContentTransition.jsx';
-import useHideIntroSlide from '../hooks/useHideIntroSlide.jsx';
+import useIntroSlideTransition from '../hooks/useIntroSlideTransition.jsx';
 import useCarousel from '../hooks/useCarousel.jsx';
 
-const INTRO_SLIDE_DURATION = 5000;
 const DURATION_UNTIL_UNHIDE_CAROUSEL = 7000;
 const CAROUSEL_IMAGE_DURATION = 5000;
-
-const introSlideHeight = window.innerHeight - 429;
-const introSlideWidth = window.innerWidth - 80;
 
 const Browser = ({ displayBrowser, setDisplayBrowser }) => {
 
@@ -27,7 +23,17 @@ const Browser = ({ displayBrowser, setDisplayBrowser }) => {
         clearTimeout(timeoutId);
       }
     }, 2200)
+  }
 
+  const transitionStage = useIntroSlideTransition();
+
+  let introSlideClasses;
+  if (transitionStage == "display-intro-slide") {
+    introSlideClasses = "intro-slide";
+  } else if (transitionStage == "transition-intro-slide") {
+    introSlideClasses = "intro-slide transition-intro-slide";
+  } else {
+    introSlideClasses = "intro-slide-hidden";
   }
 
   return (
@@ -40,7 +46,7 @@ const Browser = ({ displayBrowser, setDisplayBrowser }) => {
       <div className="browser-body">
         <div id="browser-main-panel" className="browser-main-panel" >
           {useCarousel(DURATION_UNTIL_UNHIDE_CAROUSEL) ? <Carousel displayBrowser={displayBrowser} carouselImageDuration={CAROUSEL_IMAGE_DURATION} durationUntilUnhideCarousel={DURATION_UNTIL_UNHIDE_CAROUSEL} imageDuration={CAROUSEL_IMAGE_DURATION} /> : null}
-          <div className={`${useHideIntroSlide(INTRO_SLIDE_DURATION) ? "intro-slide-hidden" : "intro-slide"}`}  >
+          <div className={introSlideClasses}  >
             <img className={`react-logo ${useIntroSlideContentTransition() ? 'item-fade' : ''}`} src="/static/assets/icons/logo.svg" />
             <h4 className={`${useIntroSlideContentTransition() ? 'item-fade' : ''}`}>Here's some apps I made earlier...</h4>
           </div>
@@ -48,10 +54,10 @@ const Browser = ({ displayBrowser, setDisplayBrowser }) => {
         <div className="browser-bottom-row">
           <div className="browser-text"></div>
           <div className="browser-btn"></div>
-          <div className="browser-btn btn-github">
-            <a href="http://github.com/red365">
+          <div className="browser-btn">
+            {/* <a href="http://github.com/red365">
               <i className='bx bxl-github'></i>
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
