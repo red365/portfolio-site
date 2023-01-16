@@ -27,7 +27,7 @@ const CSS_PATH = path.join(__dirname, '..', 'public', 'build', 'main.css');
 
 if (args[2] == '--mode' && args[3] == 'dev') {
 	const compiler = webpack(require('../webpack.config.js'));
-	server.use(webpackDevMiddleware(compiler, { publicPath: '/static/build' }));
+	server.use(webpackDevMiddleware(compiler, { publicPath: '/build' }));
 	server.use(webpackHotMiddleware(compiler, {}));
 } else {
 	server.get('/build/bundle.js', (request, response) =>
